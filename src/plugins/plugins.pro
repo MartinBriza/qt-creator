@@ -75,11 +75,33 @@ isEmpty(LLVM_INSTALL_DIR):LLVM_INSTALL_DIR=$$(LLVM_INSTALL_DIR)
 
 isEmpty(IDE_PACKAGE_MODE) {
     SUBDIRS += \
-        helloworld #\
-        #updateinfo
-#} else:!isEmpty(UPDATEINFO_ENABLE) {
-#    SUBDIRS += \
-#        updateinfo
+        helloworld \
+        updateinfo
+} else:!isEmpty(UPDATEINFO_ENABLE) {
+    SUBDIRS += \
+        updateinfo \
+        plugin_updateinfo
+}
+linux-* {
+     SUBDIRS += debugger/ptracepreload.pro
+     SUBDIRS += platform_unity
+}
+
+minQtVersion(5, 3, 1) {
+    SUBDIRS += qmldesigner
+} else {
+     warning("QmlDesigner plugin has been disabled.")
+     warning("This plugin requires Qt 5.3.1 or newer.")
+}
+
+minQtVersion(5, 2, 0) {
+    SUBDIRS += \
+        qmlprofiler \
+        welcome
+} else {
+     warning("QmlProfiler plugin has been disabled.")
+     warning("Welcome plugin has been disabled.")
+     warning("These plugins need at least Qt 5.2.")
 }
 
 for(p, SUBDIRS) {
