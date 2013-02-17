@@ -101,6 +101,7 @@ SOURCES += corejsextensions.cpp \
     removefiledialog.cpp \
     iversioncontrol.cpp \
     dialogs/addtovcsdialog.cpp \
+    iplatformintegration.cpp \
     icorelistener.cpp \
     ioutputpane.cpp \
     patchtool.cpp \
@@ -219,6 +220,7 @@ HEADERS += corejsextensions.h \
     textdocument.h \
     documentmanager.h \
     removefiledialog.h \
+    iplatformintegration.h \
     dialogs/addtovcsdialog.h \
     patchtool.h \
     windowsupport.h \

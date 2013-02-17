@@ -28,10 +28,19 @@
 **
 ****************************************************************************/
 
+#include <coreplugin/iplatformintegration.h>
+#include <extensionsystem/pluginmanager.h>
+
 #include "progressmanager_p.h"
+
+static inline QList<Core::IPlatformIntegration*> allPlatformIntegrations()
+{
+    return ExtensionSystem::PluginManager::getObjects<Core::IPlatformIntegration>();
+}
 
 void Core::Internal::ProgressManagerPrivate::initInternal()
 {
+
 }
 
 void Core::Internal::ProgressManagerPrivate::cleanup()
