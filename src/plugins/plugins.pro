@@ -85,6 +85,7 @@ isEmpty(IDE_PACKAGE_MODE) {
 linux-* {
      SUBDIRS += debugger/ptracepreload.pro
      SUBDIRS += platform_unity
+     SUBDIRS += platform_plasma
 }
 
 minQtVersion(5, 3, 1) {
